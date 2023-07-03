@@ -20,7 +20,8 @@ public class HelloController {
     @ResponseBody
     public String showUserInfo() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        PersonDetails personDetails = (PersonDetails) authentication.getPrincipal(); // получим принципал
+        PersonDetails personDetails = (PersonDetails) authentication.getPrincipal(); // получим принципал.
+        // он ответственен за логин
         return personDetails.getUsername();
         // получим доступ к тому что мы положили в методе AuthProvider => in UserNameAuthenicationToken in first
         // parametr
